@@ -12,7 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
       with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        node-version: '12.x'
+    
+    - name: Install firebase-tools (firebase's cli)
+      run: npm install -g firebase-tools
+      
+    - name: Deploy the pages
+      run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
