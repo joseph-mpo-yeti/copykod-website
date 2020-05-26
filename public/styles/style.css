@@ -30,10 +30,13 @@ a:hover {
 .btn-secondary:focus {
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
-  border: .05rem solid #5a122e;
+  border: .05rem solid #5a122e30;
   color: #5a122e;
 }
 
+.btn-secondary:hover {
+  box-shadow: 1px 1px 4px -1.5px;
+}
 
 /*
  * Base structure
